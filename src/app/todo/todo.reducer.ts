@@ -1,7 +1,10 @@
 import { Actions, ADD_TODO } from './todo.actions';
 import { Todo } from './model/todo.model';
 
-const initialState: Todo[] = [];
+const initialState: Todo[] = [
+    new Todo('Ngrx POC'),
+    new Todo('Elegans POC')
+];
 
 export function todoReducer(state = initialState, action: Actions): Todo[] {
     
