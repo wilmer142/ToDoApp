@@ -5,5 +5,5 @@
         <label (dblclick)="edit()">{{ todo.text }}</label>
         <button class="destroy"></button>
     </div>
-    <input class="edit" [value]="todo.text" [formControl]="txtInput" #txtInputDom (blur)="edit(false)">
+    <input class="edit" [value]="todo.text" [formControl]="txtInput" #txtInputDom (keyup.enter)="endEdit()">
 </li>
