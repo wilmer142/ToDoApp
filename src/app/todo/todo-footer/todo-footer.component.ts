@@ -3,6 +3,7 @@ import { allowedFilters, SetFilterAction } from '../../filter/filter.actions';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.reducers';
 import { Todo } from '../model/todo.model';
+import { DeleteCompletedTodoAction } from '../todo.actions';
 
 @Component({
   selector: 'app-todo-footer',
@@ -31,6 +32,11 @@ export class TodoFooterComponent implements OnInit {
 
   countPendingTaks(tasks: Todo[]) {
     this.pendingTasks = tasks.filter(x => !x.completed).length;
+  }
+
+  clearCompleted() {
+    const deleteCompletedTodoAction = new DeleteCompletedTodoAction();
+    this.store.dispatch(deleteCompletedTodoAction);
   }
 
 }
